@@ -6,7 +6,8 @@
 [![Platform](https://img.shields.io/cocoapods/p/TTTagView.svg?style=flat)](https://cocoapods.org/pods/TTTagView)
 
 ## 简介
-[![screenshot](https://qn.nobady.cn/icofans/1651592882396_.pic.jpg)]()
+
+<img src="https://qn.nobady.cn/icofans/1651592882396_.pic.jpg" width="320">
 
 一个优雅的支持单行，多行分页，支持单选多选等功能的自定义标签视图
 
