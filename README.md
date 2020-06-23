@@ -6,6 +6,8 @@
 [![Platform](https://img.shields.io/cocoapods/p/TTTagView.svg?style=flat)](https://cocoapods.org/pods/TTTagView)
 
 ## 简介
+[![]()https://qn.nobady.cn/icofans/1651592882396_.pic.jpg)]
+
 一个优雅的支持单行，多行分页，支持单选多选等功能的自定义标签视图
 
 1、支持自动布局，不需要计算高度，也不需要指定frame，自适应高度
@@ -28,6 +30,8 @@
 ```ruby
 pod 'TTTagView'
 ```
+2、创建TagView
+
 ```ruby
 // 创建
 self.tagView = [[TTTagView alloc] init];
@@ -48,3 +52,5 @@ self.tagView.defaultSelectTags = @[@"羽泉"];
 // 获取选中的数据
 NSArray *selectTags = self.tagView.selectTags;
 ```
+
+
