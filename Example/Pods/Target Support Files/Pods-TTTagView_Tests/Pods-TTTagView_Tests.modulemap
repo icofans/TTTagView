@@ -1,0 +1,6 @@
+framework module Pods_TTTagView_Tests {
+  umbrella header "Pods-TTTagView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_TTTagView_Example {
+  umbrella header "Pods-TTTagView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
