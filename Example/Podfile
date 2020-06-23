@@ -5,6 +5,7 @@ platform :ios, '8.0'
 target 'TTTagView_Example' do
   pod 'TTTagView', :path => '../'
 
+  pod 'Masonry'
   target 'TTTagView_Tests' do
     inherit! :search_paths
 
