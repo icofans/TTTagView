@@ -5,25 +5,38 @@
 [![License](https://img.shields.io/cocoapods/l/TTTagView.svg?style=flat)](https://cocoapods.org/pods/TTTagView)
 [![Platform](https://img.shields.io/cocoapods/p/TTTagView.svg?style=flat)](https://cocoapods.org/pods/TTTagView)
 
-## Example
+## 简介
+一个优雅的支持单行，多行分页，支持单选多选等功能的自定义标签视图
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+1、支持自动布局，不需要计算高度，也不需要指定frame，自适应高度
+2、支持单行，多行显示
+3、支持分页显示
+4、支持单选，多选，禁用选择
+5、支持添加和删除Tag
+6、支持字典数据类型
 
-## Requirements
 
-## Installation
+## 使用
 
-TTTagView is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+1、使用cocopods
 
 ```ruby
 pod 'TTTagView'
 ```
+```ruby
+// 创建
+self.tagView = [[TTTagView alloc] init];
+[self.view addSubview:self.tagView];
 
-## Author
+// 布局
+[self.tagView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.top.mas_equalTo(16);
+    make.left.right.mas_equalTo(0);
+}];
 
-icofans, 565057208@qq.com
-
-## License
-
-TTTagView is available under the MIT license. See the LICENSE file for more info.
+// 赋值
+// 指定数据
+self.tagView.tagsArray = @[@"林俊杰",@"张学友",@"刘德华",@"陶喆",@"王力宏",@"王菲",@"Taylor swift",@"周杰伦",@"owl city",@"汪苏泷",@"许嵩",@"李代沫",@"那英",@"羽泉",@"刀郎",@"田馥甄",@"庄心妍",@"林宥嘉",@"薛之谦",@"萧敬腾",@"王若琳"];
+// 指定默认选中的数据（可选）
+self.tagView.defaultSelectTags = @[@"羽泉"];
+```
