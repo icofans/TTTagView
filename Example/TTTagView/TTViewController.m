@@ -9,11 +9,13 @@
 #import "TTViewController.h"
 #import "TTTagView.h"
 #import <Masonry/Masonry.h>
+#import "TTTableViewController.h"
 
 @interface TTViewController ()
 
 @property(nonatomic, strong) UIButton *addTag;
 @property(nonatomic, strong) UIButton *removeTag;
+@property(nonatomic, strong) UIButton *nextBtn;
 
 @property(nonatomic, strong) UILabel *title1Label;
 @property(nonatomic, strong) TTTagView *tagView1;
@@ -40,6 +42,12 @@
     [self.removeTag setTitle:@"删除" forState:UIControlStateNormal];
     [self.removeTag addTarget:self action:@selector(removeTag:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.removeTag];
+    
+    
+    self.nextBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.nextBtn setTitle:@"跳转" forState:UIControlStateNormal];
+    [self.nextBtn addTarget:self action:@selector(next:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.nextBtn];
     
     self.title1Label = [[UILabel alloc] init];
     self.title1Label.text = @"不分页单选";
@@ -74,6 +82,11 @@
     [self.addTag mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(60);
         make.left.mas_equalTo(40);
+    }];
+    
+    [self.nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(60);
+        make.centerX.mas_equalTo(self.view);
     }];
     [self.removeTag mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(60);
@@ -148,6 +161,12 @@
     [self.tagView1 removeTag:[self.tagView1.tagsArray objectAtIndex:r1]];
     [self.tagView2 removeTag:[self.tagView2.tagsArray objectAtIndex:r2]];
     [self.tagView3 removeTag:[self.tagView3.tagsArray objectAtIndex:r3]];
+}
+
+- (void)next:(UIButton *)sender
+{
+    TTTableViewController *tb = [[TTTableViewController alloc] init];
+    [self presentViewController:tb animated:YES completion:nil];
 }
 
 

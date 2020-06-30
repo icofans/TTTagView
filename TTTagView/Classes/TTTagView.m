@@ -102,15 +102,22 @@
 
 - (void)setTagsArray:(NSArray *)tagsArray
 {
-    _tagsArray = tagsArray;
     if (!tagsArray || !tagsArray.count) {
         [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     }
-    // 添加标签
-    [self.selectBtns removeAllObjects];
-    for (int i = 0; i < tagsArray.count; i++) {
-        [self addTagWithModel:tagsArray[i]];
+    // 相同不添加
+    if (![tagsArray isEqualToArray:_tagsArray]) {
+        // 添加标签
+        [self.selectBtns removeAllObjects];
+        for (int i = 0; i < tagsArray.count; i++) {
+            [self addTagWithModel:tagsArray[i]];
+        }
     }
+    // 重新布局
+    _contentSize = CGSizeZero;
+    [self updateTagViewLayout];
+    
+    _tagsArray = tagsArray;
 }
 
 
@@ -276,6 +283,7 @@
 
 - (CGSize)intrinsicContentSize
 {
+    [self updateTagViewLayout];
     return self.contentSize;
 }
 

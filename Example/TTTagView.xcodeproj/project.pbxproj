@@ -24,6 +24,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		E936BD618A7EADC14CAF5EB5 /* Pods_TTTagView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCACA005A4819E9F96A8E740 /* Pods_TTTagView_Example.framework */; };
+		F7F84A2824AACF7200A5D50D /* TTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F84A2724AACF7200A5D50D /* TTTableViewController.m */; };
+		F7F84A2B24AAD08A00A5D50D /* TTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F84A2A24AAD08A00A5D50D /* TTTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,10 @@
 		AEF200B3E3B6AB3DC87A40B4 /* Pods-TTTagView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTTagView_Tests.release.xcconfig"; path = "Target Support Files/Pods-TTTagView_Tests/Pods-TTTagView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BCACA005A4819E9F96A8E740 /* Pods_TTTagView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTTagView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C9E0481FAF29FB0AA2108C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F7F84A2624AACF7200A5D50D /* TTTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTableViewController.h; sourceTree = "<group>"; };
+		F7F84A2724AACF7200A5D50D /* TTTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTableViewController.m; sourceTree = "<group>"; };
+		F7F84A2924AAD08A00A5D50D /* TTTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTableViewCell.h; sourceTree = "<group>"; };
+		F7F84A2A24AAD08A00A5D50D /* TTTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,10 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				F7F84A2624AACF7200A5D50D /* TTTableViewController.h */,
+				F7F84A2724AACF7200A5D50D /* TTTableViewController.m */,
+				F7F84A2924AAD08A00A5D50D /* TTTableViewCell.h */,
+				F7F84A2A24AAD08A00A5D50D /* TTTableViewCell.m */,
 			);
 			name = "Example for TTTagView";
 			path = TTTagView;
@@ -370,6 +380,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* TTAppDelegate.m in Sources */,
+				F7F84A2B24AAD08A00A5D50D /* TTTableViewCell.m in Sources */,
+				F7F84A2824AACF7200A5D50D /* TTTableViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* TTViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
