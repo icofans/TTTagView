@@ -96,6 +96,8 @@
         
         [self addSubview:self.scrollView];
         [self addSubview:self.pageControl];
+        
+        self.translatesAutoresizingMaskIntoConstraints = NO;
     }
     return self;
 }
@@ -180,6 +182,14 @@
     [self addTagWithModel:model];
     if (![self.tagsArray containsObject:model]) {
         _tagsArray = [self.tagsArray arrayByAddingObject:model];
+    }
+    [self updateTagViewLayout];
+}
+
+- (void)addTags:(NSArray *)tags
+{
+    for (int i = 0; i < tags.count; i++) {
+        [self addTagWithModel:tags[i]];
     }
     [self updateTagViewLayout];
 }
@@ -289,13 +299,17 @@
 
 - (void)updateTagViewLayout
 {
+    
     [UIView beginAnimations:nil context:nil];
+
     NSArray *items = self.scrollView.subviews;
     if (items.count == 0) {
         // 没有设置内容，内容大小为零
         _contentSize = CGSizeZero;
+        [self invalidateIntrinsicContentSize];
         return;
     }
+    
     // 按钮高度
     CGFloat itemH = 28;
     CGFloat itemX = self.itemSpacing;
@@ -373,10 +387,16 @@
         }
         newContentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(frame) + marginY);
     }
+    
     if (!CGSizeEqualToSize(newContentSize, _contentSize)) {
-        _contentSize = newContentSize;
-        // 通知外部IntrinsicContentSize失效
-        [self invalidateIntrinsicContentSize];
+        if (newContentSize.width == 0 || newContentSize.height < itemH) {
+            [self layoutIfNeeded];
+        } else {
+            _contentSize = newContentSize;
+            // 通知外部IntrinsicContentSize失效
+            [self invalidateIntrinsicContentSize];
+        }
+        
     }
     [UIView commitAnimations];
 }
@@ -402,8 +422,13 @@
         _pageControl.pageIndicatorTintColor = _pageIndicatorTintColor;
         _pageControl.currentPageIndicatorTintColor = _currentPageIndicatorTintColor;
         // 通过图片自定义
-        [_pageControl setValue:_pageIndicatorImage forKeyPath:@"pageImage"];
-        [_pageControl setValue:_currentPageIndicatorImage forKeyPath:@"currentPageImage"];
+//        if (@available(iOS 14.0, *)) {
+//            _pageControl.preferredIndicatorImage = _pageIndicatorImage;
+//        } else {
+//            // Fallback on earlier versions
+//        }
+////        [_pageControl setValue:_pageIndicatorImage forKeyPath:@"pageImage"];
+////        [_pageControl setValue:_currentPageIndicatorImage forKeyPath:@"currentPageImage"];
     }
     return _pageControl;
 }

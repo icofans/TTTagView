@@ -29,6 +29,11 @@
     if (self) {
         self.tagView = [[TTTagView alloc] init];
         [self.contentView addSubview:self.tagView];
+        
+        CGRect frame = self.contentView.frame;
+        frame.size.width = [UIScreen mainScreen].bounds.size.width;
+        self.contentView.frame = frame;
+        
         [self.tagView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.mas_equalTo(16);
             make.bottom.right.mas_equalTo(-16);
@@ -41,6 +46,7 @@
 {
     self.tagView.tagsArray = tags;
 }
+
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

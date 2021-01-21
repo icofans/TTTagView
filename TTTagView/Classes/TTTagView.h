@@ -98,6 +98,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addTag:(id)model;
 - (void)removeTag:(id)model;
 
+- (void)addTags:(NSArray *)tags;
+
 @end
 
 NS_ASSUME_NONNULL_END
