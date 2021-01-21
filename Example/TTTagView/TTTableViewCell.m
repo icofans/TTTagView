@@ -30,6 +30,7 @@
         self.tagView = [[TTTagView alloc] init];
         [self.contentView addSubview:self.tagView];
         
+        // 在tagview中获取不到真实的宽度,未找到原因
         CGRect frame = self.contentView.frame;
         frame.size.width = [UIScreen mainScreen].bounds.size.width;
         self.contentView.frame = frame;
