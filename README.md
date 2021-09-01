@@ -5,6 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/TTTagView.svg?style=flat)](https://cocoapods.org/pods/TTTagView)
 [![Platform](https://img.shields.io/cocoapods/p/TTTagView.svg?style=flat)](https://cocoapods.org/pods/TTTagView)
 
+
+不维护了,别点星星✨了
+
 ## 简介
 
 一个优雅的支持单行，多行分页，支持单选多选等功能的自定义标签视图
